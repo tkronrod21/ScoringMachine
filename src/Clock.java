@@ -45,8 +45,16 @@ public class Clock {
 	 */
 	public long stopClock() {
 		this.stopTime = System.currentTimeMillis();
-		this.timeLeft = this.stopTime - this.startTime;
+		this.timeLeft = this.timeLeft - (this.stopTime - this.startTime);
 		
+		return this.timeLeft;
+	}
+	
+	/**
+	 * Returns the amount of time left on the clock
+	 * @return amount of time left on the clock
+	 */
+	public long getTimeLeft() {
 		return this.timeLeft;
 	}
 }

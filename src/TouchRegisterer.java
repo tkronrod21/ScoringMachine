@@ -24,7 +24,7 @@ public class TouchRegisterer {
 	}
 	
 	public ArrayList<Lights> interperate(boolean[] wireInputs, 
-												WeaponBeingUsed weapon) {
+										WeaponBeingUsed weapon) {
 		this.weapon = weapon;
 		
 		if(this.weapon == WeaponBeingUsed.epee) {

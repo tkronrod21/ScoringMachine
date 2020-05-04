@@ -1,3 +1,4 @@
+import java.awt.Color;
 
 public class Cards {
 	private CardTypes leftCard;
@@ -63,6 +64,8 @@ public class Cards {
 			this.leftCard = CardTypes.red;
 		else if(this.leftCard == CardTypes.red)
 			this.leftCard = CardTypes.black;
+		else if(this.leftCard == CardTypes.black) 
+			this.leftCard = CardTypes.none;
 	}
 	
 	/**
@@ -75,5 +78,29 @@ public class Cards {
 			this.rightCard = CardTypes.red;
 		else if(this.rightCard == CardTypes.red)
 			this.rightCard = CardTypes.black;
+		else if(this.rightCard == CardTypes.black)
+			this.rightCard = CardTypes.none;
+	}
+	
+	public Color getRightColor() {
+		if(this.rightCard == CardTypes.yellow)
+			return Color.YELLOW;
+		else if(this.rightCard == CardTypes.red)
+			return Color.RED;
+		else if(this.rightCard == CardTypes.black)
+			return Color.BLACK;
+		else
+			return null;
+	}
+	
+	public Color getLeftColor() {
+		if(this.leftCard == CardTypes.yellow)
+			return Color.YELLOW;
+		else if(this.leftCard == CardTypes.red)
+			return Color.RED;
+		else if(this.leftCard == CardTypes.black)
+			return Color.BLACK;
+		else
+			return null;
 	}
 }

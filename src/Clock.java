@@ -57,4 +57,19 @@ public class Clock {
 	public long getTimeLeft() {
 		return this.timeLeft;
 	}
+	
+	/**
+	 * Returns a displayable time for the GUI
+	 * @return a standard looking clock time for the GUI
+	 */
+	public String getDisplayTime() {
+		int minLeft = (int)(this.timeLeft) / 60000;
+		int secLeft = (int)(this.timeLeft) % 60000;
+		
+		
+		if(secLeft != 0)
+			return minLeft + ":" + secLeft;
+		else
+			return minLeft + ":" + secLeft + "0";
+	}
 }

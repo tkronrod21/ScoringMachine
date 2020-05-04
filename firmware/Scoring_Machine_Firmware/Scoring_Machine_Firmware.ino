@@ -25,7 +25,7 @@
 // #defines
 //============
 //TODO: set up debug levels correctly
-#define DEBUG 0
+//#define DEBUG 0           
 //#define TEST_LIGHTS       // turns on lights for a second on start up
 //#define TEST_ADC_SPEED    // used to test sample rate of ADCs
 //#define REPORT_TIMING     // prints timings over serial interface
@@ -222,49 +222,49 @@ void remote() {
       changeMode();
    }
    else if(value == remotePause) {
-      Serial.println("Clock");
+      Serial.println(15);
    }
    else if(value == remoteBackwards) {
-      Serial.println("Left score: up");
+      Serial.println(16);
    }
    else if(value == remoteDown) {
-      Serial.println("Left score: down");
+      Serial.println(17);
    }
    else if(value == remoteForwards) {
-      Serial.println("Right score: up");
+      Serial.println(3);
    }
    else if(value == remoteUp) {
-      Serial.println("Right score: down");
+      Serial.println(4);
    }
    else if(value == remotePower) {
-      Serial.println("Reset all");
+      Serial.println(5);
    }
    else if(value == remoteVolumeUp) {
-      Serial.println("Time: up");
+      Serial.println(6);
    }
    else if(value == remoteVolumeDown) {
-      Serial.println("Time: down");
+      Serial.println(7);
    }
    else if(value == remoteEQ) {
-      Serial.println("Time: reset");
+      Serial.println(8);
    }
    else if(value == remoteST) {
-      Serial.println("Score: reset");
+      Serial.println(9);
    }
    else if(value == remote0) {
-      Serial.println("Cards: reset");
+      Serial.println(10);
    }
    else if(value == remote1) {
-      Serial.println("Left card: up");
+      Serial.println(11);
    }
    else if(value == remote4) {
-      Serial.println("Left card: down");
+      Serial.println(12);
    }
    else if(value == remote3) {
-      Serial.println("Right card: up");
+      Serial.println(13);
    }
    else if(value == remote6) {
-      Serial.println("Right card: down");
+      Serial.println(14);
    }
 }
 
@@ -356,7 +356,6 @@ void checkIfModeChanged() {
          }
       }
       setModeLeds();
-      Serial.print("Mode: ");
       Serial.println(currentMode);
   }
   modeJustChangedFlag = false;
@@ -560,8 +559,23 @@ void signalHits() {
                             + "hitOffTargB : "  + hitOffTargB + "\n"
                             + "hitOnTargB  : "  + hitOnTargB  + "\n"
                             + "Locked Out  : "  + lockedOut   + "\n";
-      Serial.println(serData);
+      //Serial.println(serData);
 #endif
+      if(hitOnTargA) {
+          Serial.println(18);
+      }
+      if(hitOffTargA) {
+          Serial.println(19);
+      }
+      if(hitOffTargB) {
+          Serial.println(20);
+      }
+      if(hitOnTargB) {
+          Serial.println(21);
+      }
+      if(lockedOut) {
+          Serial.println(22);
+      }
       resetValues();
    }
 }
@@ -581,7 +595,7 @@ void resetValues() {
    digitalWrite(shortLEDA,  LOW);
    digitalWrite(shortLEDB,  LOW);
 
-   Serial.println("Reset lights");
+   Serial.println(23);
 
    lockedOut    = false;
    depressAtime = 0;
